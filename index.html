@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна - Обласний молодіжний центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Логотип Молодіжного центру" class="logo-img">
+                <h1 class="logo-text">Обласний молодіжний центр</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Головна</a></li>
+                    <li><a href="about.html" class="nav-link">Про нас</a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакти</a></li>
+                    <li><a href="space.html" class="nav-link">Простір</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Головний контент -->
+    <main class="main">
+        <!-- Привітання -->
+        <section class="hero">
+            <h2>Ласкаво просимо!</h2>
+            <p>Дізнайтесь більше про наші заходи, програми та можливості для молоді.</p>
+        </section>
+        <section class="opportunities">
+            <h2>Що ти можеш у нас зробити?</h2>
+            <p>У Молодіжному Хабі на тебе чекає простір для розвитку, нових знайомств та втілення ідей:</p>
+            <ul class="opportunities-list">
+                <li>Навчатися та здобувати нові навички.</li>
+                <li>Знайомитися та спілкуватися з однодумцями.</li>
+                <li>Розважатися та брати участь у цікавих заходах.</li>
+                <li>Втілювати свої ідеї у життя.</li>
+            </ul>
+            <h3>Теми, з якими ми працюємо:</h3>
+            <ul class="topics-list">
+                <li>SOFT skills.</li>
+                <li>Фізичне та ментальне здоров’я.</li>
+                <li>Профорієнтація.</li>
+                <li>Молодіжна політика.</li>
+                <li>Неформальна освіта та молодіжний активізм.</li>
+                <li>Тематичні клуби: <em>Speaking club</em>, настолки, кіноманія, Арт-лабораторія.</li>
+                <li>Культурні заходи.</li>
+            </ul>
+            <p>Хочеш створити власний проєкт? У Молодіжному Хабі ми допоможемо тобі досвідом і матеріальними ресурсами!</p>
+        </section>
+
+        <section class="carousel">
+            <h2 class="carousel-title">Наша команда</h2> <!-- Додано підпис -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+                <div class="carousel-slides">
+                    <img src="images/team1.jpg" alt="Фото 1" class="carousel-slide active">
+                    <img src="images/team2.jpg" alt="Фото 2" class="carousel-slide">
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p1>© 2024 Обласний молодіжний центр. Всі права захищено.</p1>
+        </div>
+    </footer>
+
+    <!-- Скрипт для каруселі -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
